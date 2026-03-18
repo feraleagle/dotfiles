@@ -3,21 +3,36 @@
 # ============================================================
 
 # -----------------------------
+# Powerlevel10k Instant Prompt
+# -----------------------------
+# Instant prompt for faster startup; requires console input above this block
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# -----------------------------
+# Powerlevel10k Theme
+# -----------------------------
+# Core theme file
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# -----------------------------
 # History Configuration
 # -----------------------------
-HISTFILE=~/.zsh_history       # File where command history is stored
-HISTSIZE=10000                # Max commands kept in memory
-SAVEHIST=10000                # Max commands saved to disk
 
-# History behavior
-setopt SHARE_HISTORY          # Imports new commands from the file and appends them
-setopt HIST_SAVE_NO_DUPS      # Do not write a duplicate event to the history file
-setopt HIST_REDUCE_BLANKS     # Remove superfluous blanks from history strings
-setopt HIST_IGNORE_DUPS       # Ignore duplicate commands in history
-setopt HIST_IGNORE_SPACE      # Ignore commands starting with a space
-setopt HIST_IGNORE_ALL_DUPS   # Ignore all Duplicates
-setopt hist_expire_dups_first # Remove older duplicates when history is full
-setopt hist_verify            # Show command after expansion before executing
+HISTFILE=~/.zsh_history          # location of the history file
+HISTFILESIZE=100000              # history limit of the file on disk
+HISTSIZE=500000                  # current session's history limit
+SAVEHIST=500000                  # zsh saves this many lines from the in-memory history list to the history file upon shell exit
+unsetopt EXTENDED_HISTORY        # Write the history file in the ":start:elapsed;command" format.
+setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
+setopt HIST_IGNORE_DUPS          # Don\'t record an entry that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
+setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
+setopt HIST_IGNORE_SPACE         # Don\'t record an entry starting with a space.
+setopt HIST_SAVE_NO_DUPS         # Don\'t write duplicate entries in the history file.
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 
 # -----------------------------
 # Completion Settings
@@ -125,20 +140,6 @@ cpprun() {
 
 # The "Cheat Sheet" via `curl`
 cheat() { curl -s cheat.sh/"$*" }
-
-# -----------------------------
-# Powerlevel10k Instant Prompt
-# -----------------------------
-# Instant prompt for faster startup; requires console input above this block
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-# -----------------------------
-# Powerlevel10k Theme
-# -----------------------------
-# Core theme file
-source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # -----------------------------
 # Zsh Plugins
