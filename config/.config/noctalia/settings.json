@@ -219,7 +219,7 @@
                     "iconColor": "none",
                     "id": "NotificationHistory",
                     "showUnreadBadge": true,
-                    "unreadBadgeColor": "primary"
+                    "unreadBadgeColor": "error"
                 },
                 {
                     "displayMode": "onhover",
