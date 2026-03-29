@@ -161,7 +161,7 @@
             "right": [
                 {
                     "colorName": "tertiary",
-                    "hideWhenIdle": true,
+                    "hideWhenIdle": false,
                     "id": "AudioVisualizer",
                     "width": 150
                 },
