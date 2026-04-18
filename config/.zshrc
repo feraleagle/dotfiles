@@ -78,7 +78,7 @@ alias ...='cd ../..'
 alias ff='fd --type f | fzf --preview "bat --color=always --style=header,grid {}"'
 
 # Search History with Fuzzy Finder
-alias ffhist='cd $HOME && cat .zsh_history | fzf | wl-copy'
+alias ffhist='cat $HOME/.zsh_history | fzf | wl-copy'
 
 # Start Trilium Notes Server Instance
 alias runtr='cd $HOME/tools/triliumNotes/triliumNotes && ./trilium.sh'
