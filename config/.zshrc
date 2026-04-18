@@ -186,7 +186,6 @@ export EGL_PLATFORM=wayland                      # Forces the correct rendering 
 # -----------------------------
 # Other Environment Variables
 # -----------------------------
-export JAVA_TOOL_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
 
 # -----------------------------
 # Powerlevel10k Configuration
