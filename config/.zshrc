@@ -140,32 +140,14 @@ cpprun() {
 
 # Compile & Upload Arduino Code
 arduino-flash() {
-    local BOARD_ARG=$1
-    local TARGET=${2:-.}
-    # Automatically finds /dev/ttyUSB0 or /dev/ttyACM0
-    local PORT=$(ls /dev/ttyUSB* /dev/ttyACM* 2>/dev/null | head -n 1)
-    local FQBN=""
-
-    if [ -z "$PORT" ]; then
-        echo "❌ Error: No Arduino detected. Check your cable!"
-        return 1
-    fi
-
-    case $BOARD_ARG in
-        nano)
-            FQBN="arduino:avr:nano"
-            ;;
-        uno)
-            FQBN="arduino:avr:uno"
-            ;;
-        *)
-            echo "Usage: arduino-flash [nano|uno] (optional_file.ino)"
-            return 1
-            ;;
+    case $1 in
+        nano) fqbn="arduino:avr:nano" ;;
+        uno)  fqbn="arduino:avr:uno" ;;
+        *) echo "Use: arduino-flash nano or uno"; return 1 ;;
     esac
 
-    echo "🚀 Flashing $BOARD_ARG on $PORT..."
-    arduino-cli compile --upload -p "$PORT" --fqbn "$FQBN" "$TARGET"
+    # Hardcode the port since we know it's /dev/ttyUSB0
+    arduino-cli compile --upload -v -p /dev/ttyUSB0 --fqbn $fqbn --verify .
 }
 
 # The "Cheat Sheet" via `curl`
