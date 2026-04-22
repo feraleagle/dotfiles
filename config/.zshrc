@@ -138,16 +138,31 @@ cpprun() {
     fi
 }
 
-# Compile & Upload Arduino Code
+# Compile & Upload Arduino Code with Auto-Port Detection
 arduino-flash() {
-    case $1 in
-        nano) fqbn="arduino:avr:nano" ;;
+    local board_type=$1
+    local fqbn=""
+    
+    case $board_type in
+        nano) fqbn="arduino:avr:nano:cpu=atmega328" ;;
         uno)  fqbn="arduino:avr:uno" ;;
-        *) echo "Use: arduino-flash nano or uno"; return 1 ;;
+        *) echo "❌ Use: arduino-flash nano or uno"; return 1 ;;
     esac
 
-    # Hardcode the port since we know it's /dev/ttyUSB0
-    arduino-cli compile --upload -v -p /dev/ttyUSB0 --fqbn $fqbn --verify .
+    # Use 'command ls' to bypass color aliases and get raw text
+    local port=$(command ls /dev/ttyUSB* 2>/dev/null | head -n 1)
+    
+    if [ -z "$port" ]; then
+        echo "💀 No device found on /dev/ttyUSB*"
+        return 1
+    fi
+
+    echo "✅ Found: $port | FQBN: $fqbn"
+    
+    # stty should work now that $port is clean text
+    stty -F "$port" hupcl 
+    
+    arduino-cli compile --upload -v -p "$port" --fqbn "$fqbn" .
 }
 
 # The "Cheat Sheet" via `curl`
