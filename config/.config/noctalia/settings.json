@@ -172,7 +172,7 @@
                     "colorName": "tertiary",
                     "hideWhenIdle": false,
                     "id": "AudioVisualizer",
-                    "width": 150
+                    "width": 125
                 },
                 {
                     "blacklist": [
@@ -215,6 +215,9 @@
                     "textColor": "none",
                     "useMonospaceFont": true,
                     "usePadding": true
+                },
+                {
+                    "id": "plugin:todo"
                 },
                 {
                     "defaultSettings": {
