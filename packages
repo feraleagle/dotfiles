@@ -4,6 +4,7 @@ arduino-cli
 arm-none-eabi-gcc
 arm-none-eabi-gdb
 arm-none-eabi-newlib
+audacious
 avrdude
 awww
 base
@@ -72,6 +73,7 @@ picocom
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
+playerctl
 pulseview
 python-pip
 qt5-wayland
@@ -108,6 +110,7 @@ woff2-font-awesome
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 yay
+yazi
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
