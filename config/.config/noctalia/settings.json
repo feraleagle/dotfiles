@@ -225,16 +225,6 @@
                     "id": "plugin:clipboard"
                 },
                 {
-                    "colorizeDistroLogo": false,
-                    "colorizeSystemIcon": "none",
-                    "colorizeSystemText": "none",
-                    "customIconPath": "",
-                    "enableColorization": false,
-                    "icon": "noctalia",
-                    "id": "ControlCenter",
-                    "useDistroLogo": false
-                },
-                {
                     "displayMode": "alwaysShow",
                     "iconColor": "none",
                     "id": "Volume",
@@ -250,11 +240,18 @@
                     "unreadBadgeColor": "error"
                 },
                 {
-                    "iconColor": "error",
-                    "id": "SessionMenu"
+                    "colorizeDistroLogo": false,
+                    "colorizeSystemIcon": "none",
+                    "colorizeSystemText": "none",
+                    "customIconPath": "",
+                    "enableColorization": false,
+                    "icon": "settings",
+                    "id": "ControlCenter",
+                    "useDistroLogo": false
                 },
                 {
-                    "id": "plugin:notes-scratchpad"
+                    "iconColor": "error",
+                    "id": "SessionMenu"
                 }
             ]
         }
