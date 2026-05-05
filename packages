@@ -28,10 +28,10 @@ fastfetch
 fd
 ffmpegthumbnailer
 firefox
-fooyin
 fzf
 gdb
 git
+gnome-themes-extra
 greetd
 greetd-tuigreet
 grim
@@ -50,7 +50,6 @@ linux
 linux-firmware
 linux-headers
 man-db
-materia-gtk-theme
 neovim
 networkmanager
 nginx
@@ -90,16 +89,12 @@ stm32cubemx
 stow
 tealdeer
 thunar
-thunar-archive-plugin
-thunar-media-tags-plugin
-thunar-volman
 tmux
 tree
 ttf-cascadia-code-nerd
 ttf-jetbrains-mono-nerd
 ttf-meslo-nerd
 ttf-nerd-fonts-symbols-common
-tumbler
 udisks2
 unzip
 usbutils
@@ -107,7 +102,6 @@ webkit2gtk-4.1
 wget
 wireplumber
 woff2-font-awesome
-xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 yay
 yazi
