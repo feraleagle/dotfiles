@@ -213,6 +213,7 @@ export EGL_PLATFORM=wayland                      # Forces the correct rendering 
 # -----------------------------
 # Other Environment Variables
 # -----------------------------
+export EDITOR=nvim
 
 # -----------------------------
 # Powerlevel10k Configuration
