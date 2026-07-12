@@ -118,7 +118,7 @@ alias runtr='systemctl start trilium-next-server.service'                       
 alias stoptr='systemctl stop trilium-next-server.service'                                                                # Stop Trilium Notes Server Instance   
 alias dwld="aria2c -x 16 -s 16 --continue=true --retry-wait=2 --max-tries=0"                                             # Downloading shortcut using aria2c
 
-alias dotsync='yay -Qe | awk "{print $1}" > $HOME/dotfiles/packages && 
+alias dotsync='yay -Qe | awk '{print $1}' > $HOME/dotfiles/packages && 
                git -C $HOME/dotfiles add . && 
                git -C $HOME/dotfiles commit -m "Updated" && 
                git -C $HOME/dotfiles push'   # Update All Packages, Commit, and Push to Github
