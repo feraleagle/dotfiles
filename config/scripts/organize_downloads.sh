@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =================================================================
-#  Hassan's Downloads Organizer - Firmware & CS Edition
+#  The Eagle's Downloads Organizer - Firmware & CS Edition
 # =================================================================
 
 TARGET_DIR="$HOME/Downloads"
