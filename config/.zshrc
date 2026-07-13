@@ -2,23 +2,23 @@
 # The Eagle's Hybrid .zshrc for Arch Linux
 # ============================================================
 
-# -----------------------------
+# ============================================================
 # Powerlevel10k Instant Prompt
-# -----------------------------
+# ============================================================
 # Instant prompt for faster startup; requires console input above this block
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# -----------------------------
+# ============================================================
 # Powerlevel10k Theme
-# -----------------------------
+# ============================================================
 # Core theme file
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
-# -----------------------------
+# ============================================================
 # History Configuration
-# -----------------------------
+# ============================================================
 
 HISTFILE=~/.zsh_history          # location of the history file
 HISTFILESIZE=50000               # history limit of the file on disk
@@ -40,9 +40,9 @@ PROMPT_EOL_MARK=""                                 # hide '%' when output lacks 
 alias history="history 0"                          # show full history with 'history'
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'  # better time command output
 
-# -----------------------------
+# ============================================================
 # Completion Settings
-# -----------------------------
+# ============================================================
 # Faster completion loading ⚡
 autoload -Uz compinit
 
@@ -58,9 +58,9 @@ if [[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdu
     zcompile "$zcompdump"
 fi
 
-# -----------------------------
+# ============================================================
 # Enhanced Completion 
-# -----------------------------
+# ============================================================
 zstyle ':completion:*' completer _expand _complete
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
@@ -70,9 +70,9 @@ zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# -----------------------------
+# ============================================================
 # Keybindings (Kali-inspired)
-# -----------------------------
+# ============================================================
 bindkey -e                                        # emacs key bindings
 bindkey ' ' magic-space                           # do history expansion on space
 bindkey '^U' backward-kill-line                   # ctrl + U delete entire line
@@ -88,9 +88,9 @@ bindkey '^[[Z' undo                               # Shift + Tab (undo last actio
 bindkey '^[OP' autosuggest-accept                 # Accept autosuggestion  [F1]
 bindkey '^[OQ' autosuggest-execute                # Execute autosuggestion [F2]
 
-# -----------------------------
-# Aliases
-# -----------------------------
+# ============================================================
+# Aliases & Shortcuts
+# ============================================================
 # EZA Command
 alias ls='eza --icons --color=always --group-directories-first'             # show files
 alias la='eza -A --icons --color=always --group-directories-first'          # show hidden files
@@ -126,7 +126,6 @@ alias dotsync="yay -Qe | awk '{print $1}' > $HOME/dotfiles/packages &&
 # Shortcuts to EDIT Configs
 alias e_h='nvim $HOME/.config/hypr/hyprland.conf'
 alias e_z='nvim $HOME/.zshrc'
-
 
 # Compile & Execute main.cpp File
 cpprun() {
@@ -170,39 +169,12 @@ cpprun() {
     fi
 }
 
-# Compile & Upload Arduino Code with Auto-Port Detection
-arduino-flash() {
-    local board_type=$1
-    local fqbn=""
-
-    case $board_type in
-        nano) fqbn="arduino:avr:nano:cpu=atmega328" ;;
-        uno)  fqbn="arduino:avr:uno" ;;
-        *) echo "❌ Use: arduino-flash nano or uno"; return 1 ;;
-    esac
-
-    # Use 'command ls' to bypass color aliases and get raw text
-    local port=$(command ls /dev/ttyUSB* 2>/dev/null | head -n 1)
-
-    if [ -z "$port" ]; then
-        echo "💀 No device found on /dev/ttyUSB*"
-        return 1
-    fi
-
-    echo "✅ Found: $port | FQBN: $fqbn"
-
-    # stty should work now that $port is clean text
-    stty -F "$port" hupcl 
-
-    arduino-cli compile --upload -v -p "$port" --fqbn "$fqbn" .
-}
-
 # The "Cheat Sheet" via `curl`
 cheat() { curl -s cheat.sh/"$*" }
 
-# -----------------------------
+# ============================================================
 # Zsh Plugins
-# -----------------------------
+# ============================================================
 # Syntax highlighting for commands
 if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -237,27 +209,28 @@ if [ -f /usr/share/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh ]; then
     zstyle ':fzf-tab:*' fzf-flags --height=40% --border=rounded --layout=reverse --color=header:italic
 fi
 
-# -----------------------------
+# ============================================================
 # Evaluations & Executions
-# -----------------------------
+# ============================================================
 eval $(thefuck --alias) # The Fuck
 
-# -----------------------------
+# ============================================================
 # Environment Variables
-# -----------------------------
+# ============================================================
+
 export EDITOR=nvim
 
-# -----------------------------
+# ============================================================
 # Browser & GUI Optimizations
-# -----------------------------
+# ============================================================
 export MOZ_ENABLE_WAYLAND=1                      # The most important flag for Zen!
 export MOZ_DBUS_REMOTE=1                         # Improves IPC communication
 export MOZ_DISABLE_RDD_SANDBOX=1                 # Helps NVIDIA hardware decoding
 export EGL_PLATFORM=wayland                      # Forces the correct rendering backend
 
-# -----------------------------
+# ============================================================
 # Powerlevel10k Configuration
-# -----------------------------
+# ============================================================
 # Load user-specific Powerlevel10k settings if available
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
