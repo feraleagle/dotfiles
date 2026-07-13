@@ -14,7 +14,7 @@ fi
 # Powerlevel10k Theme
 # ============================================================
 # Core theme file
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.local/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # ============================================================
 # History Configuration
@@ -114,14 +114,10 @@ alias ...='cd ../..'
 # File Preview With FZF
 alias fp="fzf --preview 'bat --color=always --style=numbers --line-range :500 {}'" 
 
-alias runtr='systemctl start trilium-next-server.service'                                                                # Start Trilium Notes Server Instance
-alias stoptr='systemctl stop trilium-next-server.service'                                                                # Stop Trilium Notes Server Instance   
-alias dwld="aria2c -x 16 -s 16 --continue=true --retry-wait=2 --max-tries=0"                                             # Downloading shortcut using aria2c
-
-alias dotsync="yay -Qe | awk '{print $1}' > $HOME/dotfiles/packages && 
-               git -C $HOME/dotfiles add . && 
-               git -C $HOME/dotfiles commit -m 'Updated' && 
-               git -C $HOME/dotfiles push"   # Update All Packages, Commit, and Push to Github
+alias runtr='systemctl start trilium-next-server.service'                          # Start Trilium Notes Server Instance
+alias stoptr='systemctl stop trilium-next-server.service'                          # Stop Trilium Notes Server Instance   
+alias dwld="aria2c -x 16 -s 16 --continue=true --retry-wait=2 --max-tries=0"       # Downloading shortcut using aria2c
+alias up_packs="yay -Qe | awk '{print $1}' > $HOME/dotfiles/packages"              # Update packages in dotfiles
 
 # Shortcuts to EDIT Configs
 alias e_h='nvim $HOME/.config/hypr/hyprland.conf'
