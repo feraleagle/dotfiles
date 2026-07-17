@@ -126,8 +126,6 @@ keymap = [
 
 	# Goto
 	{ on = [ "g", "h" ],       run = "cd ~",             desc = "Go home" },
-	{ on = [ "g", "c" ],       run = "cd ~/.config",     desc = "Go ~/.config" },
-	{ on = [ "g", "d" ],       run = "cd ~/Downloads",   desc = "Go ~/Downloads" },
 	{ on = [ "g", "<Space>" ], run = "cd --interactive", desc = "Jump interactively" },
 	{ on = [ "g", "f" ],       run = "follow",           desc = "Follow hovered symlink" },
 
@@ -159,7 +157,12 @@ keymap = [
 	{ on = "<F1>", run = "help", desc = "Open help" },
 
     # Custom
-    { on = "<C-t>", run ='shell "kitty" --orphan --confirm' , desc = "Open kitty terminal here" },
+    { on = "<C-t>", run ='shell "kitty" --orphan --confirm' , desc = "CUSTOM: Open kitty terminal here" },
+    { on = "u" , run = "cd --interactive", desc = "CUSTOM: Jump interactively" },
+    { on = [ "g", "/" ],       run = "cd /",   desc = "CUSTOM: Goto /" },
+    { on = [ "g", "c" ],       run = "cd ~/.config",     desc = "CUSTOM: Goto ~/.config" },
+    { on = [ "g", "d" ],       run = "cd ~/Downloads",   desc = "CUSTOM: Goto ~/.Downloads" },
+    { on = [ "g", "n" ],       run = "cd ~/.local/state/nvim/swap/",   desc = "CUSTOM: Goto NVIM swap" },
 ]
 
 [tasks]

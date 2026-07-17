@@ -1,9 +1,9 @@
 # ============================================================
-# The Eagle's Hybrid .zshrc for Arch Linux
+# THE EAGLE'S HYBRID .ZSHRC FOR ARCH LINUX
 # ============================================================
 
 # ============================================================
-# Powerlevel10k Instant Prompt
+# POWERLEVEL10K INSTANT PROMPT
 # ============================================================
 # Instant prompt for faster startup; requires console input above this block
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -11,13 +11,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # ============================================================
-# Powerlevel10k Theme
+# POWERLEVEL10K THEME
 # ============================================================
 # Core theme file
 source ~/.local/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # ============================================================
-# History Configuration
+# HISTORY CONFIGURATION
 # ============================================================
 
 HISTFILE=~/.zsh_history          # location of the history file
@@ -33,15 +33,13 @@ setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
 setopt HIST_IGNORE_SPACE         # Don\'t record an entry starting with a space.
 setopt HIST_SAVE_NO_DUPS         # Don\'t write duplicate entries in the history file.
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
+setopt autocd                    # Type directory name to cd into it
 
-setopt autocd                                      # type directory name to cd into it
-WORDCHARS=${WORDCHARS//\/}                         # slashes don't break word jumping
-PROMPT_EOL_MARK=""                                 # hide '%' when output lacks newline
-alias history="history 0"                          # show full history with 'history'
-TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'  # better time command output
+PROMPT_EOL_MARK=""                                 # Hide '%' when output lacks newline
+TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'  # Better time command output
 
 # ============================================================
-# Completion Settings
+# COMPLETION SETTINGS
 # ============================================================
 # Faster completion loading ⚡
 autoload -Uz compinit
@@ -59,7 +57,7 @@ if [[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdu
 fi
 
 # ============================================================
-# Enhanced Completion 
+# ENHANCED COMPLETION 
 # ============================================================
 zstyle ':completion:*' completer _expand _complete
 zstyle ':completion:*' format 'Completing %d'
@@ -71,32 +69,20 @@ zstyle ':completion:*' use-compctl false
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # ============================================================
-# Keybindings (Kali-inspired)
+# KEYBINDINGS 
 # ============================================================
-bindkey -e                                        # emacs key bindings
-bindkey ' ' magic-space                           # do history expansion on space
-bindkey '^U' backward-kill-line                   # ctrl + U delete entire line
-bindkey '^[[3;5~' kill-word                       # ctrl + Delete
-bindkey '^[[3~' delete-char                       # Delete key
-bindkey '^[[1;5C' forward-word                    # ctrl + Right Arrow
-bindkey '^[[1;5D' backward-word                   # ctrl + Left Arrow
-bindkey '^[[5~' beginning-of-buffer-or-history    # Page Up
-bindkey '^[[6~' end-of-buffer-or-history          # Page Down
-bindkey '^[[H' beginning-of-line                  # Home key
-bindkey '^[[F' end-of-line                        # End key
-bindkey '^[[Z' undo                               # Shift + Tab (undo last action)
-bindkey '^[OP' autosuggest-accept                 # Accept autosuggestion  [F1]
-bindkey '^[OQ' autosuggest-execute                # Execute autosuggestion [F2]
+bindkey -e                                        # VI Key Bindings
+bindkey '^[OP' autosuggest-accept                 # Accept AUTOSUGGESTION  [F1]
+bindkey '^[OQ' autosuggest-execute                # Execute AUTOSUGGESTION [F2]
 
 # ============================================================
-# Aliases & Shortcuts
+# ALIASES & SHORTCUTS
 # ============================================================
 # EZA Command
 alias ls='eza --icons --color=always --group-directories-first'             # show files
 alias la='eza -A --icons --color=always --group-directories-first'          # show hidden files
 alias ll='eza -l --icons --color=always --group-directories-first'          # list files
 alias lla='eza -la --icons --color=always --group-directories-first'        # list hidden files
-alias lg='eza -la --icons --color=always --group-directories-first --git'   # show git files
 alias ld='eza -ld .*'                                                       # show dotfiles only
 
 alias lt='eza --tree --icons --color=always --group-directories-first'                 # show tree
@@ -112,6 +98,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 # Miscellaneous
+alias lg='lazygit'                                                                 # lazygit shorthand
 alias runtr='systemctl start trilium-next-server.service'                          # Start Trilium Notes Server Instance
 alias stoptr='systemctl stop trilium-next-server.service'                          # Stop Trilium Notes Server Instance   
 alias dwld="aria2c -x 16 -s 16 --continue=true --retry-wait=2 --max-tries=0"       # Downloading shortcut using aria2c
@@ -143,7 +130,6 @@ cpprun() {
         # Debug compile
         if g++ -std=c++20 -Wall -Wextra -O0 -g "$file" -o "$out"; then
             echo -e "${GREEN}✅ Compilation successful (debug). Debugging $out...${NC}"
-            gdb "$out"
         else
             echo -e "${RED}❌ Compilation failed.${NC}"
         fi
@@ -162,7 +148,7 @@ cpprun() {
 cheat() { curl -s cheat.sh/"$*" }
 
 # ============================================================
-# Zsh Plugins
+# ZSH PLUGINS
 # ============================================================
 # Syntax highlighting for commands
 if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
@@ -195,21 +181,21 @@ if [ -f /usr/share/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh ]; then
     # 2. Preview file contents (code) when tabbing after 'nvim', 'cat', or 'bat'
     zstyle ':fzf-tab:complete:*:*' fzf-preview 'bat --color=always --style=numbers --line-range :500 $realpath 2>/dev/null || eza -1 --icons --color=always $realpath 2>/dev/null'
     # 3. Switch the UI to a cleaner look with rounded borders
-    zstyle ':fzf-tab:*' fzf-flags --height=40% --border=rounded --layout=reverse --color=header:italic
+    zstyle ':fzf-tab:*' fzf-flags --height=50% --border=rounded --layout=reverse --color=header:italic
 fi
 
 # ============================================================
-# Evaluations & Executions
+# EVALUATIONS & EXECUTIONS
 # ============================================================
 eval $(thefuck --alias) # The Fuck
 
 # ============================================================
-# Environment Variables
+# ENVIRONMENT VARIABLES
 # ============================================================
 export EDITOR=nvim
 
 # ============================================================
-# Browser & GUI Optimizations
+# BROWSER & GUI OPTIMIZATIONS
 # ============================================================
 export MOZ_ENABLE_WAYLAND=1                      # The most important flag for Zen!
 export MOZ_DBUS_REMOTE=1                         # Improves IPC communication
@@ -217,7 +203,7 @@ export MOZ_DISABLE_RDD_SANDBOX=1                 # Helps NVIDIA hardware decodin
 export EGL_PLATFORM=wayland                      # Forces the correct rendering backend
 
 # ============================================================
-# Powerlevel10k Configuration
+# POWERLEVEL10K CONFIGURATION
 # ============================================================
 # Load user-specific Powerlevel10k settings if available
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
@@ -228,5 +214,5 @@ setopt interactivecomments
 setopt nonomatch
 
 # ============================================================
-# End of .zshrc
+# END OF .ZSHRC
 # ============================================================
