@@ -1,5 +1,10 @@
 #!/bin/bash
 
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+RED='\033[0;31m'
+NC='\033[0m'
+
 # =================================================================
 #  The Eagle's Downloads Organizer - Firmware & CS Edition
 # =================================================================
@@ -10,7 +15,7 @@ cd "$TARGET_DIR" || exit
 echo "🔧 Organizing $TARGET_DIR for a clean workspace..."
 
 # 📂 Create the directory structure first
-mkdir -p images documents archives web videos others scripts firmware general
+mkdir -p images documents archives web videos others scripts general
 
 # 🔄 Loop through every file in the current directory (non-recursive)
 for file in *; do
@@ -52,11 +57,6 @@ for file in *; do
         mv "$file" scripts/
         ;;
 
-    # 📟 Firmware & Hardware (STM32, JSON, etc.)
-    json | hex | bin | elf | kicad_pcb | sch)
-        mv "$file" firmware/
-        ;;
-
     # 🛠️ Others (Partial downloads, specific tool formats)
     part | crdownload | tmp)
         mv "$file" others/
@@ -69,4 +69,4 @@ for file in *; do
     esac
 done
 
-echo "✅ Done! Your $TARGET_DIR is now organized like an 1800-rated Chess game. ♟️🔥"
+echo -e "${GREEN}✅ Done! Your $TARGET_DIR is now organized🔥$NC"

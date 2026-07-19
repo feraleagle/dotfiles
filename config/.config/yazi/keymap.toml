@@ -161,6 +161,7 @@ keymap = [
     { on = "u" , run = "cd --interactive", desc = "CUSTOM: Jump interactively" },
     { on = [ "g", "/" ],       run = "cd /",   desc = "CUSTOM: Goto /" },
     { on = [ "g", "c" ],       run = "cd ~/.config",     desc = "CUSTOM: Goto ~/.config" },
+    { on = [ "g", "t" ],       run = "cd ~/programming/.temp",     desc = "CUSTOM: Goto ~/programming/.temp" },
     { on = [ "g", "d" ],       run = "cd ~/Downloads",   desc = "CUSTOM: Goto ~/.Downloads" },
     { on = [ "g", "n" ],       run = "cd ~/.local/state/nvim/swap/",   desc = "CUSTOM: Goto NVIM swap" },
 ]

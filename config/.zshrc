@@ -102,6 +102,7 @@ alias lg='lazygit'                                                              
 alias runtr='systemctl start trilium-next-server.service'                          # Start Trilium Notes Server Instance
 alias stoptr='systemctl stop trilium-next-server.service'                          # Stop Trilium Notes Server Instance   
 alias dwld="aria2c -x 16 -s 16 --continue=true --retry-wait=2 --max-tries=0"       # Downloading shortcut using aria2c
+alias scripts="$HOME/scripts/main.sh"
 
 # Compile & Execute main.cpp File
 cpprun() {
@@ -126,7 +127,7 @@ cpprun() {
     RED='\033[0;31m'
     NC='\033[0m'
 
-    if [[ $debug -eq 1 ]]; then
+   if [[ $debug -eq 1 ]]; then
         # Debug compile
         if g++ -std=c++20 -Wall -Wextra -O0 -g "$file" -o "$out"; then
             echo -e "${GREEN}✅ Compilation successful (debug). Debugging $out...${NC}"
