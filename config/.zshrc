@@ -1,5 +1,5 @@
 # ============================================================
-# THE EAGLE'S HYBRID .ZSHRC FOR ARCH LINUX
+# THE EAGLE'S .ZSHRC FOR ARCH LINUX
 # ============================================================
 
 # ============================================================
@@ -19,11 +19,9 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 # Load user-specific Powerlevel10k settings if available
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
-
 # ============================================================
 # HISTORY CONFIGURATION
 # ============================================================
-
 HISTFILE=~/.zsh_history          # location of the history file
 HISTFILESIZE=50000               # history limit of the file on disk
 HISTSIZE=50000                   # current session's history limit
@@ -83,101 +81,51 @@ bindkey '^[OQ' autosuggest-execute                # Execute AUTOSUGGESTION [F2]
 # ALIASES & SHORTCUTS
 # ============================================================
 # EZA Command
-alias ls='eza --icons --color=always --group-directories-first'             # show files
-alias la='eza -A --icons --color=always --group-directories-first'          # show hidden files
-alias ll='eza -l --icons --color=always --group-directories-first'          # list files
-alias lla='eza -la --icons --color=always --group-directories-first'        # list hidden files
-alias ld='eza -ld .*'                                                       # show dotfiles only
+alias ls='eza --icons --color=always --group-directories-first'             # Show Files
+alias ll='eza -l --icons --color=always --group-directories-first'          # List Files
+alias la='eza -A --icons --color=always --group-directories-first'          # Show Hidden Files
+alias lla='eza -la --icons --color=always --group-directories-first'        # List Hidden Files
 
-alias lt='eza --tree --icons --color=always --group-directories-first'                 # show tree
-alias lt2='eza --tree --icons --level=2 --color=always --group-directories-first'      # show tree 2 levels deep
-
-
-alias ltc='eza --tree --icons=never --color=never | wl-copy'
-alias lc='/bin/ls -l --group-directories-first | wl-copy'
-alias lca='/bin/ls -la --group-directories-first | wl-copy'
+alias lt='eza --tree --icons --color=always --group-directories-first'                 # Show Tree
+alias lt2='eza --tree --icons --level=2 --color=always --group-directories-first'      # Show Tree 2 Levels Deep
 
 # CD Command
 alias ..='cd ..'
 alias ...='cd ../..'
 
 # Miscellaneous
-alias lg='lazygit'                                                                 # lazygit shorthand
+alias lg='lazygit'                                                                 # Lazygit Shorthand
 alias runtr='systemctl start trilium-next-server.service'                          # Start Trilium Notes Server Instance
 alias stoptr='systemctl stop trilium-next-server.service'                          # Stop Trilium Notes Server Instance   
 alias dwld="aria2c -x 16 -s 16 --continue=true --retry-wait=2 --max-tries=0"       # Downloading shortcut using aria2c
-alias scripts="$HOME/scripts/main.sh"
-
-# Compile & Execute main.cpp File
-cpprun() {
-    # Default settings
-    local file="main.cpp"
-    local debug=0
-
-    # Parse arguments
-    for arg in "$@"; do
-        if [[ "$arg" == "--debug" ]]; then
-            debug=1
-        else
-            file="$arg"
-        fi
-    done
-
-    local out="${file%.*}.out"
-
-    # Colors
-    GREEN='\033[0;32m'
-    CYAN='\033[0;36m'
-    RED='\033[0;31m'
-    NC='\033[0m'
-
-   if [[ $debug -eq 1 ]]; then
-        # Debug compile
-        if g++ -std=c++20 -Wall -Wextra -O0 -g "$file" -o "$out"; then
-            echo -e "${GREEN}✅ Compilation successful (debug). Debugging $out...${NC}"
-        else
-            echo -e "${RED}❌ Compilation failed.${NC}"
-        fi
-    else
-        # Release compile
-        if g++ -std=c++20 -Wall -Wextra -O2 "$file" -o "$out"; then
-            echo -e "${GREEN}✅ Compilation successful. Running $out...${NC}"
-            ./"$out"
-        else
-            echo -e "${RED}❌ Compilation failed.${NC}"
-        fi
-    fi
-}
-
-# The "Cheat Sheet" via `curl`
-cheat() { curl -s cheat.sh/"$*" }
+alias scr="$HOME/scripts/main.sh"
 
 # ============================================================
 # ZSH PLUGINS
 # ============================================================
-# Syntax highlighting for commands
+# ZSH-SYNTAX-HIGHLIGHTING: Syntax highlighting for commands
 if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
-# Autosuggestions based on command history
+# ZSH-AUTOSUGGESTIONS: Autosuggestions based on command history
 if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'  # Light gray suggestions
 fi
 
-# FZF key bindings and completion
+# ZOXIDE: Smart directory jumping
+if command -v zoxide &> /dev/null; then
+    eval "$(zoxide init zsh)"
+fi
+
+# FZF: Key bindings and completion
 if [ -f /usr/share/fzf/key-bindings.zsh ]; then
     source /usr/share/fzf/key-bindings.zsh
     source /usr/share/fzf/completion.zsh
 fi
 
-# Smart directory jumping
-if command -v zoxide &> /dev/null; then
-    eval "$(zoxide init zsh)"
-fi
-
-# FZF Auto Tab Completion
+# FZF: Auto Tab Completion
 if [ -f /usr/share/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh ]; then
     source /usr/share/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
 
@@ -189,23 +137,17 @@ if [ -f /usr/share/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh ]; then
     zstyle ':fzf-tab:*' fzf-flags --height=50% --border=rounded --layout=reverse --color=header:italic
 fi
 
-# ============================================================
-# EVALUATIONS & EXECUTIONS
-# ============================================================
+# FUCK: Fixes Incorrectly Typed Commands
 eval $(thefuck --alias) # The Fuck
 
 # ============================================================
 # ENVIRONMENT VARIABLES
 # ============================================================
-export EDITOR=nvim
-
-# ============================================================
-# BROWSER & GUI OPTIMIZATIONS
-# ============================================================
 export MOZ_ENABLE_WAYLAND=1                      # The most important flag for Zen!
 export MOZ_DBUS_REMOTE=1                         # Improves IPC communication
 export MOZ_DISABLE_RDD_SANDBOX=1                 # Helps NVIDIA hardware decoding
 export EGL_PLATFORM=wayland                      # Forces the correct rendering backend
+export EDITOR=nvim                               # Default Editor
 
 # ============================================================
 # MISCELLANEOUS
