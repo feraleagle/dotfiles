@@ -14,7 +14,11 @@ fi
 # POWERLEVEL10K THEME
 # ============================================================
 # Core theme file
-source ~/.local/share/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
+
+# Load user-specific Powerlevel10k settings if available
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
 
 # ============================================================
 # HISTORY CONFIGURATION
@@ -204,11 +208,8 @@ export MOZ_DISABLE_RDD_SANDBOX=1                 # Helps NVIDIA hardware decodin
 export EGL_PLATFORM=wayland                      # Forces the correct rendering backend
 
 # ============================================================
-# POWERLEVEL10K CONFIGURATION
+# MISCELLANEOUS
 # ============================================================
-# Load user-specific Powerlevel10k settings if available
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-
 # Smart Sorting and Comments
 setopt numericglobsort
 setopt interactivecomments
