@@ -10,7 +10,6 @@ awww
 base
 base-devel
 bat
-bear
 bluez
 btop
 clang
@@ -28,7 +27,6 @@ fzf
 fzf-tab
 gdb
 git
-gnome-themes-extra
 greetd
 greetd-tuigreet
 grub
@@ -55,10 +53,8 @@ noctalia-shell
 npm
 ntfs-3g
 nvidia-open-dkms
-nwg-look
 openocd
 pacman-contrib
-papirus-icon-theme
 perl-file-mimeinfo
 picocom
 pipewire-alsa
@@ -77,16 +73,11 @@ sigrok-firmware-fx2lafw
 smartmontools
 sqlitebrowser
 stlink
-stm32cubemx
 stow
-tealdeer
 thefuck
 thunar
 trilium-next-server-bin
-ttf-cascadia-code-nerd
 ttf-jetbrains-mono-nerd
-ttf-meslo-nerd
-ttf-nerd-fonts-symbols-common
 udisks2
 unzip
 usbutils

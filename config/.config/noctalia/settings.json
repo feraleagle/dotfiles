@@ -152,10 +152,10 @@
                 },
                 {
                     "compactMode": true,
-                    "hideMode": "visible",
+                    "hideMode": "hidden",
                     "hideWhenIdle": false,
                     "id": "MediaMini",
-                    "maxWidth": 175,
+                    "maxWidth": 150,
                     "panelShowAlbumArt": true,
                     "scrollingMode": "always",
                     "showAlbumArt": true,
@@ -163,7 +163,7 @@
                     "showProgressRing": true,
                     "showVisualizer": true,
                     "textColor": "none",
-                    "useFixedWidth": false,
+                    "useFixedWidth": true,
                     "visualizerType": "linear"
                 }
             ],

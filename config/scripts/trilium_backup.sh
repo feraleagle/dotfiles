@@ -6,7 +6,7 @@ RED='\033[0;31m'
 NC='\033[0m'
 
 SRC=$HOME/.local/share/trilium-data/
-DST=$HOME/.secure_vault/
+DST=$HOME/vault
 
 mkdir -p "$DST"
 
