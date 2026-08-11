@@ -1,6 +1,5 @@
 7zip
 amd-ucode
-arduino-cli
 aria2
 arm-none-eabi-gcc
 arm-none-eabi-gdb
@@ -74,7 +73,6 @@ smartmontools
 sqlitebrowser
 stlink
 stow
-thefuck
 thunar
 trilium-next-server-bin
 ttf-jetbrains-mono-nerd
