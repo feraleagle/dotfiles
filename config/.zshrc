@@ -138,6 +138,7 @@ if [ -f /usr/share/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh ]; then
     zstyle ':fzf-tab:*' fzf-flags --height=50% --border=rounded --layout=reverse --color=header:italic
 fi
 
+# FIXIT: Install Original Plugin
 # ZSH VI Mode Plugin
 if [ -f $HOME/.local/share/zsh_plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh ]; then
     source ~/.local/share/zsh_plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh # Source Plugin
