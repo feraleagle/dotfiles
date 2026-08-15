@@ -20,9 +20,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source ~/.powerlevel10k/powerlevel10k.zsh-theme   # Core theme file
-[[ -f ~/.powerlevel10k/.p10k.zsh ]] && source ~/.powerlevel10k/.p10k.zsh        # Load user-specific Powerlevel10k settings
-
+# Load user-specific Powerlevel10k settings
+[[ -f ~/.powerlevel10k/powerlevel10k.zsh-theme ]] && source ~/.powerlevel10k/powerlevel10k.zsh-theme
+[[ -f ~/.powerlevel10k/.p10k.zsh ]] && source ~/.powerlevel10k/.p10k.zsh
 
 # ===============================================================================================
 # HISTORY CONFIGURATION
@@ -136,9 +136,11 @@ if [ -f /usr/share/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh ]; then
     # 1. Preview directory tree when tabbing after 'cd'
     zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --icons --color=always $realpath'
     # 2. Preview file contents (code) when tabbing after 'nvim', 'cat', or 'bat'
-    zstyle ':fzf-tab:complete:*:*' fzf-preview 'bat --color=always --style=numbers --line-range :500 $realpath 2>/dev/null || eza -1 --icons --color=always $realpath 2>/dev/null'
+    zstyle ':fzf-tab:complete:*:*' fzf-preview 'bat --color=always --style=numbers --line-range \
+            :500 $realpath 2>/dev/null || eza -1 --icons --color=always $realpath 2>/dev/null'
     # 3. Switch the UI to a cleaner look with rounded borders
-    zstyle ':fzf-tab:*' fzf-flags --height=50% --border=rounded --layout=reverse --color=header:italic
+    zstyle ':fzf-tab:*' fzf-flags --height=50% --border=rounded --layout=reverse \
+            --color=header:italic
 fi
 
 # FIXIT: Install Original Plugin
