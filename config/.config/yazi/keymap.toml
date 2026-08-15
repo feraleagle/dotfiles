@@ -158,7 +158,6 @@ keymap = [
 
     # Custom
     { on = "<C-t>", run ='shell "kitty" --orphan --confirm' , desc = "CUSTOM: Open kitty terminal here" },
-    { on = "u" , run = "cd --interactive", desc = "CUSTOM: Jump interactively" },
     { on = [ "g", "m" ], run = "cd /run/media", desc = "CUSTOM: Goto /run/media/" },
     { on = [ "g", "c" ], run = "cd ~/.config", desc = "CUSTOM: Goto ~/.config" },
     { on = [ "g", "t" ], run = "cd ~/codex/.temp", desc = "CUSTOM: Goto ~/codex/.temp" },
