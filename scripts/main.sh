@@ -12,7 +12,7 @@ echo -e "+----+-----------------------------------------------------------------
 echo -e "| 01 | CLEAN ZSH_HISTORY FILE                                                                    |"
 echo -e "| 02 | ORGANIZE DOWNLOADS                                                                        |"
 echo -e "| 03 | BACKUP TRILIUM NOTES                                                                      |"
-echo -e "| 04 | RESURRECT ~/programming/.temp                                                             |"
+echo -e "| 04 | RESURRECT ~/codex/.temp                                                             |"
 echo -e "+----+-------------------------------------------------------------------------------------------+"
 
 read -rp "|=> " selection

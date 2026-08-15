@@ -18,13 +18,13 @@ RED='\033[0;31m'
 NC='\033[0m'
 "
 
-if [[ -d "$HOME/programming/.temp" ]]; then
+if [[ -d "$HOME/codex/.temp" ]]; then
     true
 else
-    mkdir "$HOME/programming/.temp"
+    mkdir "$HOME/codex/.temp"
 fi
 
-cd ~/programming/.temp || exit
+cd "$HOME/codex/.temp" || exit
 rm -rf ./*
 echo "$cpp_template" >main.cpp
 echo "$bash_template" >script.sh

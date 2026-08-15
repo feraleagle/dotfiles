@@ -4,7 +4,6 @@ aria2
 arm-none-eabi-gcc
 arm-none-eabi-gdb
 arm-none-eabi-newlib
-avrdude
 awww
 base
 base-devel
@@ -29,8 +28,6 @@ git
 greetd
 greetd-tuigreet
 grub
-gvfs
-gvfs-mtp
 hyprland
 hyprshade
 hyprshot
@@ -69,20 +66,15 @@ ripgrep
 rustup
 sigrok-cli
 sigrok-firmware-fx2lafw
-smartmontools
 sqlitebrowser
 stlink
 stow
-thunar
 trilium-next-server-bin
 ttf-jetbrains-mono-nerd
-udisks2
 unzip
 usbutils
-webkit2gtk-4.1
 wget
 wireplumber
-woff2-font-awesome
 xdg-desktop-portal-hyprland
 yay
 yazi

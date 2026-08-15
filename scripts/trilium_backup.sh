@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 
 GREEN='\033[0;32m'
-CYAN='\033[0;36m'
 RED='\033[0;31m'
 NC='\033[0m'
 
 SRC=$HOME/.local/share/trilium-data/
-DST=$HOME/vault
+DST=$HOME/vault/knowledgebase/
 
 mkdir -p "$DST"
 
