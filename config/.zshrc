@@ -11,21 +11,23 @@
 #                  ZSH-AUTOSUGGESTIONS
 # ***********************************************************************************************
 
-# ============================================================
+# ===============================================================================================
 # POWERLEVEL10K INSTANT PROMPT
-# ============================================================
+# ===============================================================================================
+
 # Instant prompt for faster startup;
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 source ~/.powerlevel10k/powerlevel10k.zsh-theme   # Core theme file
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh        # Load user-specific Powerlevel10k settings
+[[ -f ~/.powerlevel10k/.p10k.zsh ]] && source ~/.powerlevel10k/.p10k.zsh        # Load user-specific Powerlevel10k settings
 
 
-# ============================================================
+# ===============================================================================================
 # HISTORY CONFIGURATION
-# ============================================================
+# ===============================================================================================
+
 HISTFILE=~/.zsh_history          # location of the history file
 HISTFILESIZE=50000               # history limit of the file on disk
 HISTSIZE=50000                   # current session's history limit
@@ -48,23 +50,24 @@ setopt nonomatch
 PROMPT_EOL_MARK=""                                 # Hide '%' when output lacks newline
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'  # Better time command output
 
-# ============================================================
+# ===============================================================================================
 # COMPLETION SETTINGS
-# ============================================================
+# ===============================================================================================
+
 # Faster completion loading ⚡
 autoload -Uz compinit
 # Ignore insecure directories
 compinit -u
 
 # Compile the completion dump to binary for even more speed
-zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
+zcompdump="${ZDOTDIR:-$HOME/.zsh}/.zcompdump"
 if [[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc") ]]; then
     zcompile "$zcompdump"
 fi
 
-# ============================================================
+# ===============================================================================================
 # ENHANCED COMPLETION 
-# ============================================================
+# ===============================================================================================
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' completer _expand _complete
 zstyle ':completion:*' format 'Completing %d'
@@ -76,9 +79,9 @@ zstyle ':completion:*' rehash true
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# ============================================================
+# ===============================================================================================
 # ALIASES & BINDINGS
-# ============================================================
+# ===============================================================================================
 
 # EZA Command
 alias l='eza -s=name --group-directories-first'                      # Shorthand ls
@@ -94,15 +97,15 @@ alias l2='eza -s=name --tree --icons --level=2 --group-directories-first'     # 
 alias lg='lazygit'                                                            # Lazygit Shorthand
 alias rtr='systemctl start trilium-next-server.service'                       # Start Trilium
 alias str='systemctl stop trilium-next-server.service'                        # Stop Trilium 
-alias dld="aria2c -x 16 -s 16 --continue=true --retry-wait=2 --max-tries=0"   # Aria2c Download
+alias dwd="aria2c -x 16 -s 16 --continue=true --retry-wait=2 --max-tries=0"   # Aria2c Download
 alias src="$HOME/dotfiles/scripts/main.sh"
 
 alias dbc="gcc -g3 -O0 -o .out "                  # Debug C
 alias dbx="g++ -std=c++20 -g3 -O0 -o .out "       # Debug C++
 
-# ============================================================
+# ===============================================================================================
 # ZSH PLUGINS
-# ============================================================
+# ===============================================================================================
 
 # ZSH-SYNTAX-HIGHLIGHTING: Syntax highlighting for commands
 if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
@@ -151,15 +154,16 @@ if [ -f $HOME/.local/share/zsh_plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh ]; the
     ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
 fi
 
-# ============================================================
+# ===============================================================================================
 # ENVIRONMENT VARIABLES
-# ============================================================
+# ===============================================================================================
+
 export MOZ_ENABLE_WAYLAND=1                      # The most important flag for Zen!
 export MOZ_DBUS_REMOTE=1                         # Improves IPC communication
 export MOZ_DISABLE_RDD_SANDBOX=1                 # Helps NVIDIA hardware decoding
 export EGL_PLATFORM=wayland                      # Forces the correct rendering backend
 export EDITOR=nvim                               # Default Editor
 
-# ============================================================
+# ===============================================================================================
 # END OF .ZSHRC
-# ============================================================
+# ===============================================================================================
