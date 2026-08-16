@@ -19,7 +19,6 @@ efibootmgr
 eza
 fastfetch
 fd
-ffmpegthumbnailer
 fooyin-bin
 fzf
 fzf-tab
@@ -40,7 +39,6 @@ libva-nvidia-driver
 linux
 linux-firmware
 linux-headers
-localsend-bin
 man-db
 neovim
 networkmanager

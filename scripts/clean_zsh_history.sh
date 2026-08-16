@@ -7,7 +7,7 @@ NC='\033[0m'
 
 cd $HOME
 if [[ -f ".zsh_history" ]]; then
-    sort -u .zsh_history_bak > .zsh_history
+    sort -u .zsh_history > .zsh_history
     echo -e "${GREEN}ZSH history is spotless now ✨$NC"
 else 
     echo -e "${RED}ZSH history file not found ❌$NC"
