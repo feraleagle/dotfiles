@@ -1,0 +1,8 @@
+fooyin
+fzf-tab
+hyprshade
+yay
+yay-debug
+zsh-theme-powerlevel10k-bin-git
+zsh-theme-powerlevel10k-bin-git-debug
+zsh-vi-mode

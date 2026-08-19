@@ -1,0 +1,60 @@
+pkgname=Arch_Environment_EAGLE
+pkgver=2.0
+pkgrel=1
+pkgdesc="Environment for my Arch Linux"
+arch=('any')
+url=""
+license=('GPL')
+depends=(
+    7zip
+    bat
+    bluez
+    bluez-utils
+    brightnessctl
+    clang
+    dosfstools
+    efibootmgr
+    eza
+    fd
+    fzf
+    git
+    greetd
+    greetd-tuigreet
+    grub
+    gvfs
+    gvfs-mtp
+    hyprland
+    hyprpaper
+    hyprshot
+    imagemagick
+    kitty
+    lazygit
+    less
+    librewolf
+    man-db
+    neovim
+    networkmanager
+    noctalia
+    nwg-look
+    pacman-contrib
+    pipewire-alsa
+    pipewire-jack
+    pipewire-pulse
+    playerctl
+    poppler
+    qt5-wayland
+    qt6-wayland
+    resvg
+    ripgrep
+    stow
+    thunar
+    ttf-jetbrains-mono-nerd
+    unzip
+    upower
+    woff2-font-awesome
+    yazi
+    zsh
+    zsh-autosuggestions
+    zsh-completions
+    zsh-syntax-highlighting
+)

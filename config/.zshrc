@@ -12,17 +12,10 @@
 # ***********************************************************************************************
 
 # ===============================================================================================
-# POWERLEVEL10K INSTANT PROMPT
+# POWERLEVEL10K
 # ===============================================================================================
-
-# Instant prompt for faster startup;
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-# Load user-specific Powerlevel10k settings
-[[ -f ~/.powerlevel10k/powerlevel10k.zsh-theme ]] && source ~/.powerlevel10k/powerlevel10k.zsh-theme
-[[ -f ~/.powerlevel10k/.p10k.zsh ]] && source ~/.powerlevel10k/.p10k.zsh
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # ===============================================================================================
 # HISTORY CONFIGURATION
@@ -35,11 +28,11 @@ SAVEHIST=50000                   # upon exit zsh saves X many lines from memory 
 unsetopt EXTENDED_HISTORY        # Write the history file in the ":start:elapsed;command" format.
 setopt INC_APPEND_HISTORY        # Write to the history file immediately.
 setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
-setopt HIST_IGNORE_DUPS          # Don\'t record an entry that was just recorded again.
+setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
 setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
 setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
-setopt HIST_IGNORE_SPACE         # Don\'t record an entry starting with a space.
-setopt HIST_SAVE_NO_DUPS         # Don\'t write duplicate entries in the history file.
+setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
+setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 setopt autocd                    # Type directory name to cd into it
 
@@ -143,14 +136,13 @@ if [ -f /usr/share/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh ]; then
             --color=header:italic
 fi
 
-# FIXIT: Install Original Plugin
 # ZSH VI Mode Plugin
-if [ -f $HOME/.local/share/zsh_plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh ]; then
-    source ~/.local/share/zsh_plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh # Source Plugin
+if [ -f /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh ]; then
+    source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh # Source Plugin
 
     ZVM_CURSOR_STYLE_ENABLED=true # Cursor shape changes between modes
     ZVM_SYSTEM_CLIPBOARD_ENABLED=true # Use system clipboard with y/p
-    ZVM_CLIPBOARD_COPY_CMD='wl-copy -selection'
+    ZVM_CLIPBOARD_COPY_CMD='wl-copy'
     ZVM_CLIPBOARD_PASTE_CMD='wl-paste'
 
     ZVM_VI_INSERT_ESCAPE_BINDKEY=jj

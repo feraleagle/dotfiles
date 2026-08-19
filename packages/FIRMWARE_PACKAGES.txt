@@ -1,0 +1,8 @@
+arm-none-eabi-gcc
+arm-none-eabi-gdb
+arm-none-eabi-newlib
+clang
+cmake
+ninja
+openocd
+sigrok-cli

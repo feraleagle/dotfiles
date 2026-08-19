@@ -162,6 +162,7 @@ keymap = [
     { on = [ "g", "c" ], run = "cd ~/.config", desc = "CUSTOM: Goto ~/.config" },
     { on = [ "g", "t" ], run = "cd ~/codex/.temp", desc = "CUSTOM: Goto ~/codex/.temp" },
     { on = [ "g", "n" ], run = "cd ~/.local/state/nvim/swap", desc = "CUSTOM: Goto NVIM swap" },
+    { on = "M", run = "plugin mount", desc = "Open mount manager" },
 ]
 
 [tasks]
