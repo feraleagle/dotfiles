@@ -3,56 +3,55 @@
 -- ============================================================
 
 hl.config({
-    general = {
-        gaps_in = 2,
-        gaps_out = 4,
-        border_size = 1,
-        col = {
-            active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
-            inactive_border = "rgba(595959aa)",
-        },
-        resize_on_border = false,
-        allow_tearing = false,
-        layout = "dwindle",
-    },
+	general = {
+		gaps_in = 2,
+		gaps_out = 4,
+		border_size = 1,
+		col = {
+			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
+			inactive_border = "rgba(595959aa)",
+		},
+		resize_on_border = false,
+		allow_tearing = false,
+		layout = "dwindle",
+	},
 
-    decoration = {
-        rounding = 3,
-        active_opacity = 1.0,
-        inactive_opacity = 1.0,
-        glow = {
-            enabled = true,
-            range = 5,
-        },
-        blur = {
-            enabled = true,
-            size = 4,
-            passes = 3,
-            vibrancy = 1.0,
-        },
-    },
+	decoration = {
+		rounding = 3,
+		active_opacity = 1.0,
+		inactive_opacity = 1.0,
+		glow = {
+			enabled = false,
+		},
+		blur = {
+			enabled = true,
+			size = 5,
+			passes = 3,
+			vibrancy = 1.0,
+		},
+	},
 
-    dwindle = {
-        preserve_split = true,
-    },
+	dwindle = {
+		preserve_split = true,
+	},
 
-    master = {
-        new_status = "master",
-    },
+	master = {
+		new_status = "master",
+	},
 
-    misc = {
-        force_default_wallpaper = -1,
-        disable_hyprland_logo = false,
-    },
+	misc = {
+		force_default_wallpaper = -1,
+		disable_hyprland_logo = false,
+	},
 })
 
 --------------------------------------------------------------------------------
 -- Animation Master Switch
 --------------------------------------------------------------------------------
 hl.config({
-    animations = {
-        enabled = true,
-    }
+	animations = {
+		enabled = true,
+	},
 })
 
 --------------------------------------------------------------------------------
@@ -73,8 +72,8 @@ hl.curve("easeOutExpo", { type = "bezier", points = { { 0.16, 1 }, { 0.3, 1 } } 
 --------------------------------------------------------------------------------
 -- Animation Rules
 --------------------------------------------------------------------------------
-hl.animation({ leaf = "windows", enabled = true, speed = 3, bezier = "md3_decel", style = "popin 60%" })
-hl.animation({ leaf = "border", enabled = true, speed = 10, bezier = "default" })
-hl.animation({ leaf = "fade", enabled = true, speed = 2.5, bezier = "md3_decel" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 3.5, bezier = "easeOutExpo", style = "slide" })
-hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 3, bezier = "md3_decel", style = "slidevert" })
+hl.animation({ leaf = "windows", enabled = true, speed = 2, bezier = "md3_decel", style = "popin 60%" })
+hl.animation({ leaf = "border", enabled = true, speed = 8, bezier = "default" })
+hl.animation({ leaf = "fade", enabled = true, speed = 2.0, bezier = "md3_decel" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 3.0, bezier = "easeOutExpo", style = "slide" })
+hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 2, bezier = "md3_decel", style = "slidevert" })

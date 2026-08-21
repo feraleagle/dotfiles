@@ -163,7 +163,7 @@ IncludeCategories:
     CaseSensitive:   false
 IncludeIsMainRegex: '(Test)?$'
 IncludeIsMainSourceRegex: ''
-IndentAccessModifiers: true
+IndentAccessModifiers: false
 IndentCaseBlocks: true
 IndentCaseLabels: true
 IndentExportBlock: true

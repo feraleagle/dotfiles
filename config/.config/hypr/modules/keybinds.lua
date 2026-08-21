@@ -31,12 +31,12 @@ hl.bind(secMod .. " + j", hl.dsp.focus({ direction = "d" }))
 
 -- ── Workspaces ─────────────────────────────────────────────
 for i = 1, 7 do
-    hl.bind(mainMod .. " + " .. i, hl.dsp.focus({ workspace = i }))
+	hl.bind(mainMod .. " + " .. i, hl.dsp.focus({ workspace = i }))
 end
 
 -- ── Move Window to Workspace ───────────────────────────────
 for i = 1, 7 do
-    hl.bind(secMod .. " + " .. i, hl.dsp.window.move({ workspace = i }))
+	hl.bind(secMod .. " + " .. i, hl.dsp.window.move({ workspace = i }))
 end
 
 -- ── Special Workspaces ─────────────────────────────────────
@@ -54,13 +54,22 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(webBrowser))
 hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd(terminalEmulator .. " --class tui-file-manager -e " .. tuiFileManager))
 
 -- ── Media Controls ─────────────────────────────────────────
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("playerctl -p " .. musicPlayer .. " volume 0.01-"), { repeating = true })
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("playerctl -p " .. musicPlayer .. " volume 0.01+"), { repeating = true })
+hl.bind(
+	"XF86AudioLowerVolume",
+	hl.dsp.exec_cmd("playerctl -p " .. musicPlayer .. " volume 0.01-"),
+	{ repeating = true }
+)
+hl.bind(
+	"XF86AudioRaiseVolume",
+	hl.dsp.exec_cmd("playerctl -p " .. musicPlayer .. " volume 0.01+"),
+	{ repeating = true }
+)
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl -p " .. musicPlayer .. " play-pause"))
 hl.bind("XF86AudioStop", hl.dsp.exec_cmd("playerctl -p " .. musicPlayer .. " pause"))
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl -p " .. musicPlayer .. " next"))
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl -p " .. musicPlayer .. " previous"))
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
+hl.bind(secMod .. " + SPACE", hl.dsp.exec_cmd("playerctl -p " .. musicPlayer .. " play-pause"))
 
 -- ── Noctalia v5 IPC Bindings ────────────────────────────
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("noctalia msg panel-toggle launcher"))
