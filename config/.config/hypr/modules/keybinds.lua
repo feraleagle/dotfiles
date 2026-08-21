@@ -9,7 +9,7 @@ local terminalEmulator = "kitty"
 local fileManager = "thunar"
 local tuiFileManager = "yazi"
 local webBrowser = "librewolf"
-local musicPlayer = "fooyin"
+local musicPlayer = "cliamp"
 
 -- Workspace Configuration
 hl.workspace_rule({ workspace = "1", default_name = "WEB", persistent = true })
@@ -54,16 +54,8 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(webBrowser))
 hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd(terminalEmulator .. " --class tui-file-manager -e " .. tuiFileManager))
 
 -- ── Media Controls ─────────────────────────────────────────
-hl.bind(
-	"XF86AudioLowerVolume",
-	hl.dsp.exec_cmd("playerctl -p " .. musicPlayer .. " volume 0.01-"),
-	{ repeating = true }
-)
-hl.bind(
-	"XF86AudioRaiseVolume",
-	hl.dsp.exec_cmd("playerctl -p " .. musicPlayer .. " volume 0.01+"),
-	{ repeating = true }
-)
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("playerctl -p " .. musicPlayer .. " volume 0.1-"), { repeating = true })
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("playerctl -p " .. musicPlayer .. " volume 0.1+"), { repeating = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl -p " .. musicPlayer .. " play-pause"))
 hl.bind("XF86AudioStop", hl.dsp.exec_cmd("playerctl -p " .. musicPlayer .. " pause"))
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl -p " .. musicPlayer .. " next"))

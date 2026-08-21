@@ -1,0 +1,44 @@
+[[track]]
+path = "/home/eagle/Music/Instrumental/Kerosene.flac"
+title = "Kerosene"
+artist = "Crystal Castles"
+album = "(III)"
+genre = "Alternative"
+year = 2012
+track_number = 2
+
+[[track]]
+path = "/home/eagle/Music/Instrumental/Killers From The Northside.flac"
+title = "Killers From The Northside"
+artist = "Kordhell"
+album = "Killers From The Northside"
+genre = "Rap/Hip Hop"
+year = 2021
+track_number = 1
+
+[[track]]
+path = "/home/eagle/Music/Instrumental/METAMORPHOSIS.flac"
+title = "METAMORPHOSIS"
+artist = "Interworld"
+album = "METAMORPHOSIS"
+genre = "Electro"
+year = 2021
+track_number = 1
+
+[[track]]
+path = "/home/eagle/Music/Instrumental/Narvent Fainted.flac"
+title = "Fainted"
+artist = "Narvent"
+album = "Fainted"
+genre = "Electro"
+year = 2023
+track_number = 1
+
+[[track]]
+path = "/home/eagle/Music/Instrumental/VØJ Memory Reboot.flac"
+title = "Memory Reboot"
+artist = "VOJ, Narvent"
+album = "Memory Reboot"
+genre = "Electro"
+year = 2023
+track_number = 1
