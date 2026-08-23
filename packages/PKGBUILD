@@ -36,6 +36,7 @@ depends=(
     networkmanager
     noctalia
     nwg-look
+    openssh
     pacman-contrib
     pipewire-alsa
     pipewire-jack
