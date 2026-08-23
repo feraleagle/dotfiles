@@ -1,5 +1,5 @@
 pkgname=Arch_Environment_EAGLE
-pkgver=2.1
+pkgver=2.2
 pkgrel=1
 pkgdesc="Environment for my Arch Linux"
 arch=('any')
@@ -31,7 +31,6 @@ depends=(
     kitty
     lazygit
     less
-    librewolf
     man-db
     neovim
     networkmanager

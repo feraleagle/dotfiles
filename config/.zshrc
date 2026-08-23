@@ -25,7 +25,7 @@ HISTFILE=~/.zsh_history          # location of the history file
 HISTFILESIZE=50000               # history limit of the file on disk
 HISTSIZE=50000                   # current session's history limit
 SAVEHIST=50000                   # upon exit zsh saves X many lines from memory -> history
-unsetopt EXTENDED_HISTORY        # Write the history file in the ":start:elapsed;command" format.
+setopt EXTENDED_HISTORY          # Write the history file with timestamps
 setopt INC_APPEND_HISTORY        # Write to the history file immediately.
 setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
 setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.

@@ -1,6 +1,7 @@
 cliamp-bin
 fzf-tab
 hyprshade
+waterfox-bin
 yay
 yay-debug
 zsh-theme-powerlevel10k-bin-git

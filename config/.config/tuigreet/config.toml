@@ -1,0 +1,18 @@
+[display]
+show_time = true
+align_greeting = "center"
+issue = false
+
+[layout]
+width = 60
+window_padding = 2
+container_padding = 2
+prompt_padding = 2
+
+[layout.widgets]
+time_position = "top"
+status_position = "bottom"
+
+[secret]
+mode = "characters"
+characters = "*"
