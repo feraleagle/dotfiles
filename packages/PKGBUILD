@@ -1,6 +1,6 @@
 pkgname=Arch_Environment_EAGLE
 pkgver=2.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Environment for my Arch Linux"
 arch=('any')
 url=""
@@ -14,7 +14,6 @@ depends=(
     brightnessctl
     btop
     clang
-    clang
     cmake
     dosfstools
     efibootmgr
@@ -22,12 +21,10 @@ depends=(
     fastfetch
     fd
     fzf
-    gcc
     git
     greetd
     greetd-tuigreet
     grub
-    gvfs
     gvfs-mtp
     hyprland
     hyprpaper
@@ -35,7 +32,6 @@ depends=(
     imagemagick
     kitty
     lazygit
-    less
     man-db
     neovim
     networkmanager
@@ -49,8 +45,6 @@ depends=(
     pipewire-pulse
     playerctl
     poppler
-    qt5-wayland
-    qt6-wayland
     resvg
     ripgrep
     sqlitebrowser
@@ -61,7 +55,6 @@ depends=(
     upower
     usbutils
     wl-clipboard
-    woff2-font-awesome
     yazi
     zoxide
     zsh
