@@ -1,5 +1,5 @@
 pkgname=Arch_Environment_EAGLE
-pkgver=2.2
+pkgver=2.3
 pkgrel=1
 pkgdesc="Environment for my Arch Linux"
 arch=('any')
@@ -12,12 +12,17 @@ depends=(
     bluez
     bluez-utils
     brightnessctl
+    btop
     clang
+    clang
+    cmake
     dosfstools
     efibootmgr
     eza
+    fastfetch
     fd
     fzf
+    gcc
     git
     greetd
     greetd-tuigreet
@@ -34,6 +39,7 @@ depends=(
     man-db
     neovim
     networkmanager
+    ninja
     noctalia
     nwg-look
     openssh
@@ -47,11 +53,13 @@ depends=(
     qt6-wayland
     resvg
     ripgrep
+    sqlitebrowser
     stow
     thunar
     ttf-jetbrains-mono-nerd
     unzip
     upower
+    usbutils
     wl-clipboard
     woff2-font-awesome
     yazi
