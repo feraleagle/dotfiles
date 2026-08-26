@@ -7,13 +7,13 @@ hl.window_rule({
 	match = { class = "^(floating-term)$" },
 	float = true,
 	size = { 900, 500 },
-	opacity = "0.80",
+	opacity = "0.85",
 })
 
 -- Kitty Terminal
 hl.window_rule({
 	match = { class = "^(kitty)$" },
-	opacity = "0.80",
+	opacity = "0.85",
 })
 
 -- Workspace Assignments
@@ -31,6 +31,7 @@ hl.window_rule({
 hl.window_rule({
 	match = { class = "^(tui-file-manager)$" },
 	workspace = "4",
+	opacity = "0.85",
 })
 
 hl.window_rule({
