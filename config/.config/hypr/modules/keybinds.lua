@@ -6,10 +6,9 @@ local mainMod = "ALT"
 local secMod = "SUPER"
 
 local terminalEmulator = "kitty"
-local fileManager = "thunar"
 local tuiFileManager = "yazi"
 local webBrowser = "waterfox"
-local musicPlayer = "cliamp"
+local musicPlayer = "fooyin"
 
 -- Workspace Configuration
 hl.workspace_rule({ workspace = "1", default_name = "WEB", persistent = true })

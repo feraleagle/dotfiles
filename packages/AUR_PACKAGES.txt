@@ -1,4 +1,3 @@
-cliamp-bin
 fzf-tab
 hyprshade
 waterfox-bin

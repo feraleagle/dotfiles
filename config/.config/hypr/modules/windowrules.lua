@@ -7,6 +7,13 @@ hl.window_rule({
 	match = { class = "^(floating-term)$" },
 	float = true,
 	size = { 900, 500 },
+	opacity = "0.80",
+})
+
+-- Kitty Terminal
+hl.window_rule({
+	match = { class = "^(kitty)$" },
+	opacity = "0.80",
 })
 
 -- Workspace Assignments

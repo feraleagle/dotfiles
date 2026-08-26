@@ -88,12 +88,9 @@ alias l2='eza -s=name --tree --icons --level=2 --group-directories-first'     # 
 
 # Miscellaneous
 alias lg='lazygit'                                                            # Lazygit Shorthand
-alias rtr='systemctl start trilium-next-server.service'                       # Start Trilium
-alias str='systemctl stop trilium-next-server.service'                        # Stop Trilium 
 alias dwd="aria2c -x 16 -s 16 --continue=true --retry-wait=2 --max-tries=0"   # Aria2c Download
-
-alias dbc="gcc -g3 -O0 -o .out "                  # Debug C
-alias dbx="g++ -std=c++20 -g3 -O0 -o .out "       # Debug C++
+alias dbc="gcc -g3 -O0 -o .out "                                              # Debug C
+alias dbx="g++ -std=c++20 -g3 -O0 -o .out "                                   # Debug C++
 
 # ===============================================================================================
 # ZSH PLUGINS

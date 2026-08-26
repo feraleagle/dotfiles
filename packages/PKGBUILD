@@ -1,63 +1,98 @@
 pkgname=Arch_Environment_EAGLE
 pkgver=2.3
-pkgrel=2
+pkgrel=3
 pkgdesc="Environment for my Arch Linux"
 arch=('any')
 url=""
 license=('GPL')
 depends=(
-    7zip
-    aria2
-    bat
-    bluez
-    bluez-utils
-    brightnessctl
-    btop
-    clang
-    cmake
-    dosfstools
+    # ─────────────────────────────────────────────
+    # System / Boot
+    # ─────────────────────────────────────────────
     efibootmgr
-    eza
-    fastfetch
-    fd
-    fzf
-    git
+    grub
+    dosfstools
+    pacman-contrib
+
+    # ─────────────────────────────────────────────
+    # Networking / Bluetooth / Utilities
+    # ─────────────────────────────────────────────
+    usbutils
+    networkmanager
+    openssh
+    upower      # Optional: `noctalia`
+    ddcutil     # Optional: `noctalia`
+    bluez       # Optional: `noctalia`
+    bluez-utils # Optional: `noctalia`
+
+    # ─────────────────────────────────────────────
+    # Desktop / Wayland / Hyprland
+    # ─────────────────────────────────────────────
+    hyprland
+    kitty
+    noctalia
     greetd
     greetd-tuigreet
-    grub
-    gvfs-mtp
-    hyprland
-    hyprpaper
-    hyprshot
-    imagemagick
-    kitty
-    lazygit
-    man-db
-    neovim
-    networkmanager
-    ninja
-    noctalia
-    openssh
-    pacman-contrib
+
+    # ─────────────────────────────────────────────
+    # Audio / Media
+    # ─────────────────────────────────────────────
+    fooyin
+    soundtouch # Plugin: `fooyin`
+    playerctl
     pipewire-alsa
     pipewire-jack
     pipewire-pulse
-    playerctl
-    poppler
-    resvg
-    ripgrep
-    sqlitebrowser
-    stow
+
+    # ─────────────────────────────────────────────
+    # File Manager / Files
+    # ─────────────────────────────────────────────
     thunar
-    ttf-jetbrains-mono-nerd
-    unzip
-    upower
-    usbutils
-    wl-clipboard
     yazi
-    zoxide
+    aria2
+    stow
+    udisks2  # Optional: `thunar`
+    gvfs-mtp # Optional: `thunar`
+    7zip     # Optional: `yazi`
+    unzip    # Optional: `lazyvim`
+
+    # ─────────────────────────────────────────────
+    # Terminal / Shell
+    # ─────────────────────────────────────────────
     zsh
     zsh-autosuggestions
     zsh-completions
     zsh-syntax-highlighting
+    bat
+    eza
+    fd
+    fzf
+    ripgrep
+    zoxide
+    fastfetch
+    btop
+    man-db
+    wl-clipboard
+
+    # ─────────────────────────────────────────────
+    # Development
+    # ─────────────────────────────────────────────
+    clang
+    cmake
+    ninja
+    git
+    neovim
+    lazygit
+
+    # ─────────────────────────────────────────────
+    # Graphics / Image / Documents
+    # ─────────────────────────────────────────────
+    imagemagick # Optional: `yazi`
+    poppler     # Optional: `yazi`
+    resvg       # Optional: `yazi`
+
+    # ─────────────────────────────────────────────
+    # Fonts
+    # ─────────────────────────────────────────────
+    ttf-jetbrains-mono-nerd
 )
