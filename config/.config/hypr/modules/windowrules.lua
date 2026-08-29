@@ -18,7 +18,7 @@ hl.window_rule({
 
 -- Workspace Assignments
 hl.window_rule({
-	match = { class = "^(waterfox)$" },
+	match = { class = "^(firefox)$" },
 	workspace = "1",
 })
 

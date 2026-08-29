@@ -7,7 +7,7 @@ local secMod = "SUPER"
 
 local terminalEmulator = "kitty"
 local tuiFileManager = "yazi"
-local webBrowser = "waterfox"
+local webBrowser = "firefox"
 local musicPlayer = "fooyin"
 
 -- Workspace Configuration
