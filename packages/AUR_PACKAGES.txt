@@ -1,5 +1,4 @@
 fzf-tab
 hyprshade
-yay
 zsh-theme-powerlevel10k-bin-git
 zsh-vi-mode

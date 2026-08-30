@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # ***********************************************************************************************
 #                                      THE EAGLE'S .ZSHRC
 # ENVIRONMENT:     ARCH LINUX
@@ -49,14 +56,14 @@ TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'  # Better time command output
 
 # Faster completion loading ⚡
 autoload -Uz compinit
-# Ignore insecure directories
-compinit -u
 
 # Compile the completion dump to binary for even more speed
 zcompdump="${ZDOTDIR:-$HOME/.zsh}/.zcompdump"
 if [[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc") ]]; then
     zcompile "$zcompdump"
 fi
+
+compinit -C
 
 # ===============================================================================================
 # ENHANCED COMPLETION 
@@ -108,7 +115,7 @@ if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; th
 fi
 
 # ZOXIDE: Smart directory jumping
-if command -v zoxide &> /dev/null; then
+if (( $+commands[zoxide] )); then
     eval "$(zoxide init zsh)"
 fi
 

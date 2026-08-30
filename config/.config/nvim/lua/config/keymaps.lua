@@ -9,5 +9,10 @@ vim.keymap.set("i", "jj", "<Esc>", { desc = "Exit Insert Mode" })
 vim.keymap.set("i", "<C-l>", "<C-o>w", { noremap = true, silent = true }) -- jump forward one word
 vim.keymap.set("i", "<C-h>", "<C-o>b", { noremap = true, silent = true }) -- jump back one word
 
+-- Jump to start/end of Line
+vim.keymap.set("n", "H", "^")
+vim.keymap.set("n", "L", "$")
+
 -- Enter command line mode with `;`
 vim.keymap.set("n", ";", ":", { noremap=true })
+vim.keymap.set("n", "g;", ";")
