@@ -1,6 +1,5 @@
 fzf-tab
 hyprshade
-waterfox-bin
 yay
 zsh-theme-powerlevel10k-bin-git
 zsh-vi-mode

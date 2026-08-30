@@ -1,5 +1,5 @@
 pkgname=Arch_Environment_EAGLE
-pkgver=2.4
+pkgver=2.5
 pkgrel=1
 pkgdesc="Environment for my Arch Linux"
 arch=('any')
@@ -21,6 +21,7 @@ depends=(
     usbutils
     networkmanager
     openssh
+    firefox
     upower      # Optional: `noctalia`
     ddcutil     # Optional: `noctalia`
     bluez       # Optional: `noctalia`
