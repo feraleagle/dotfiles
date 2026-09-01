@@ -1,6 +1,6 @@
 pkgname=Arch_Environment_EAGLE
 pkgver=2.5
-pkgrel=2
+pkgrel=3
 pkgdesc="Environment for my Arch Linux"
 arch=('any')
 url=""
@@ -40,8 +40,7 @@ depends=(
     # ─────────────────────────────────────────────
     # Audio / Media
     # ─────────────────────────────────────────────
-    fooyin
-    soundtouch # Plugin: `fooyin`
+    audacious
     playerctl
     pipewire-alsa
     pipewire-jack

@@ -8,7 +8,7 @@ local secMod = "SUPER"
 local terminalEmulator = "kitty"
 local tuiFileManager = "yazi"
 local webBrowser = "firefox"
-local musicPlayer = "fooyin"
+local musicPlayer = "audacious"
 
 -- Workspace Configuration
 hl.workspace_rule({ workspace = "1", default_name = "WEB", persistent = true })

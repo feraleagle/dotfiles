@@ -35,7 +35,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-	match = { class = "^(org.fooyin.fooyin)$" },
+	match = { class = "^(audacious)$" },
 	workspace = "special:music",
 	opacity = "0.75 0.75",
 })

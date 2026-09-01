@@ -241,15 +241,42 @@ keymap = [
         "r",
     ], run = "tab_rename --interactive", desc = "Rename current tab" },
 
-    { on = "1", run = "tab_switch 0", desc = "Switch to first tab" },
-    { on = "2", run = "tab_switch 1", desc = "Switch to second tab" },
-    { on = "3", run = "tab_switch 2", desc = "Switch to third tab" },
-    { on = "4", run = "tab_switch 3", desc = "Switch to fourth tab" },
-    { on = "5", run = "tab_switch 4", desc = "Switch to fifth tab" },
-    { on = "6", run = "tab_switch 5", desc = "Switch to sixth tab" },
-    { on = "7", run = "tab_switch 6", desc = "Switch to seventh tab" },
-    { on = "8", run = "tab_switch 7", desc = "Switch to eighth tab" },
-    { on = "9", run = "tab_switch 8", desc = "Switch to ninth tab" },
+    { on = [
+        "t",
+        "1",
+    ], run = "tab_switch 0", desc = "to first tab" },
+    { on = [
+        "t",
+        "2",
+    ], run = "tab_switch 1", desc = "to second tab" },
+    { on = [
+        "t",
+        "3",
+    ], run = "tab_switch 2", desc = "to third tab" },
+    { on = [
+        "t",
+        "4",
+    ], run = "tab_switch 3", desc = "to fourth tab" },
+    { on = [
+        "t",
+        "5",
+    ], run = "tab_switch 4", desc = "to fifth tab" },
+    { on = [
+        "t",
+        "6",
+    ], run = "tab_switch 5", desc = "to sixth tab" },
+    { on = [
+        "t",
+        "7",
+    ], run = "tab_switch 6", desc = "to seventh tab" },
+    { on = [
+        "t",
+        "8",
+    ], run = "tab_switch 7", desc = "to eighth tab" },
+    { on = [
+        "t",
+        "9",
+    ], run = "tab_switch 8", desc = " to ninth tab" },
 
     { on = "[", run = "tab_switch -1 --relative", desc = "Switch to previous tab" },
     { on = "]", run = "tab_switch 1 --relative", desc = "Switch to next tab" },
