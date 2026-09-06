@@ -13,7 +13,7 @@ local musicPlayer = "audacious"
 -- Workspace Configuration
 hl.workspace_rule({ workspace = "1", default_name = "WEB", persistent = true })
 hl.workspace_rule({ workspace = "2", default_name = "TST", persistent = true })
-hl.workspace_rule({ workspace = "3", default_name = "CODEX-C", persistent = true })
+hl.workspace_rule({ workspace = "3", default_name = "CORTEX-C", persistent = true })
 hl.workspace_rule({ workspace = "4", default_name = "EXP", persistent = true })
 hl.workspace_rule({ workspace = "5", default_name = "MSC", persistent = true })
 
