@@ -163,6 +163,3 @@ export EDITOR=nvim                               # Default Editor
 # ===============================================================================================
 # END OF .ZSHRC
 # ===============================================================================================
-
-export PATH="/home/eagle/.config/herd-lite/bin:$PATH"
-export PHP_INI_SCAN_DIR="/home/eagle/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
