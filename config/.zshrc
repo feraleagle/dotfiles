@@ -159,6 +159,7 @@ export MOZ_DBUS_REMOTE=1                         # Improves IPC communication
 export MOZ_DISABLE_RDD_SANDBOX=1                 # Helps NVIDIA hardware decoding
 export EGL_PLATFORM=wayland                      # Forces the correct rendering backend
 export EDITOR=nvim                               # Default Editor
+export PATH="$HOME/.local/bin:$PATH"             # NPM & Other Binaries
 
 # ===============================================================================================
 # END OF .ZSHRC
