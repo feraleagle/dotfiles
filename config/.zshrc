@@ -1,6 +1,6 @@
 # ***********************************************************************************************
 #                                      THE EAGLE'S .ZSHRC
-# ENVIRONMENT:     ARCH LINUX
+# ENVIRONMENT:     THE ARCH LINUX
 #                  HYPRLAND
 #
 # REQUIREMENTS:    ZOXIDE, EZA, LAZYGIT
