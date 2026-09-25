@@ -148,6 +148,20 @@ if [ -f /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh ]; then
     ZVM_CLIPBOARD_PASTE_CMD='wl-paste'
 
     ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
+
+    # Custom functions
+    my_zvm_custom_bindings() {
+        # --- F1: Accept AND Execute ---
+        zvm_bindkey viins '^[OP' autosuggest-execute
+        zvm_bindkey vicmd '^[OP' autosuggest-execute
+
+        # --- F2: Only Complete (Accept) ---
+        zvm_bindkey viins '^[OQ' autosuggest-accept
+        zvm_bindkey vicmd '^[OQ' autosuggest-accept
+    }
+    
+    # Register the function so zsh-vi-mode runs it at the perfect time
+    zvm_after_init_commands+=(my_zvm_custom_bindings)
 fi
 
 # ===============================================================================================
