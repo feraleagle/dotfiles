@@ -98,6 +98,9 @@ alias dwd="aria2c -x 16 -s 16 --continue=true --retry-wait=2 --max-tries=0"   # 
 alias dbc="gcc -g3 -O0 -o .out "                                              # Debug C
 alias dbx="g++ -std=c++20 -g3 -O0 -o .out "                                   # Debug C++
 
+# ESP-IDF
+alias idf='source "$HOME/.espressif/tools/activate_idf_v6.1.sh"'
+
 # ===============================================================================================
 # ZSH PLUGINS
 # ===============================================================================================
