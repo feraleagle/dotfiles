@@ -53,10 +53,13 @@ depends=(
     yazi
     aria2
     stow
-    udisks2  # Optional: `thunar`
-    gvfs-mtp # Optional: `thunar`
-    7zip     # Optional: `yazi`
-    unzip    # Optional: `lazyvim`
+    udisks2            # Optional: `thunar`
+    gvfs-mtp           # Optional: `thunar`
+    7zip               # Optional: `yazi`
+    unzip              # Optional: `lazyvim`
+    nwg-look           # Optional: `theming`
+    adw-gtk-theme      # Optional: `theming`
+    papirus-icon-theme # Optional: `theming`
 
     # ─────────────────────────────────────────────
     # Terminal / Shell
