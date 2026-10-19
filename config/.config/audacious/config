@@ -1,0 +1,43 @@
+
+[audacious]
+equalizer_active=TRUE
+equalizer_bands=0,4,4,0,0,0,0,0,0,0
+equalizer_preamp=-3
+repeat=TRUE
+shuffle=TRUE
+use_qt=FALSE
+
+[audgui]
+eq_preset_win=0,0,453,231
+equalizer_win=0,0,952,1042
+filebrowser_win=0,0,952,1042
+filesel_path=/home/eagle/Music
+info_win=0,0,952,1042
+
+[filebrowser]
+file_path=/home/eagle/Music
+
+[gtkui]
+column_widths=10,307,313,10,175,175,10,100,45,10,275,275,275,10,275,175,75,10,50,50
+entry_count_visible=TRUE
+player_maximized=TRUE
+
+[gtkui-layout]
+item0_name=File Browser
+item0_pos=-1,0,0,948,514
+item1_name=Playlist Manager
+item1_pos=-1,0,0,948,514
+item2_name=Blur Scope
+item2_pos=-1,0,0,948,514
+item_count=3
+
+[pipewire]
+volume_left=62
+volume_right=62
+
+[qtui]
+player_height=1042
+player_width=952
+
+[speed-pitch]
+pitch=0.96
