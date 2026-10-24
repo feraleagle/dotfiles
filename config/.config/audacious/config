@@ -32,12 +32,14 @@ item2_pos=-1,0,0,948,514
 item_count=3
 
 [pipewire]
-volume_left=62
-volume_right=62
+volume_left=42
+volume_right=42
 
 [qtui]
 player_height=1042
 player_width=952
 
 [speed-pitch]
-pitch=0.96
+decouple=FALSE
+pitch=0.93
+speed=0.93
