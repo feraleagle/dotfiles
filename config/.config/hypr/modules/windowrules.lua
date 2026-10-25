@@ -37,7 +37,7 @@ hl.window_rule({
 hl.window_rule({
 	match = { class = "^(audacious)$" },
 	workspace = "special:music",
-	opacity = "0.75 0.75",
+	opacity = "0.65 0.65",
 })
 
 -- Opacity Rules
