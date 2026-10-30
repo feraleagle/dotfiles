@@ -99,7 +99,7 @@ alias dbc="gcc -g3 -O0 -o .out "                                              # 
 alias dbx="g++ -std=c++20 -g3 -O0 -o .out "                                   # Debug C++
 
 # ESP-IDF
-alias idf='source "$HOME/.espressif/tools/activate_idf_v6.1.sh"'
+alias idf='source /opt/esp-idf/export.sh'
 
 # ===============================================================================================
 # ZSH PLUGINS
