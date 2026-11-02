@@ -1,10 +1,10 @@
 pkgname=Arch_Environment_EAGLE
-pkgver=2.5
-pkgrel=3
+pkgver=3.0
+pkgrel=1
 pkgdesc="Environment for my Arch Linux"
 arch=('any')
-url=""
-license=('GPL')
+url="https://github.com/feraleagle/dotfiles"
+license=('GPL-3')
 depends=(
     # ─────────────────────────────────────────────
     # System / Boot
@@ -22,7 +22,6 @@ depends=(
     networkmanager
     openssh
     firefox
-    syncthing
     upower      # Optional: `noctalia`
     ddcutil     # Optional: `noctalia`
     bluez       # Optional: `noctalia`
@@ -36,14 +35,17 @@ depends=(
     noctalia
     greetd
     greetd-tuigreet
+    xdg-desktop-portal
+    xdg-desktop-portal-hyprland
 
     # ─────────────────────────────────────────────
     # Audio / Media
     # ─────────────────────────────────────────────
     audacious
     playerctl
+    pipewire
+    wireplumber
     pipewire-alsa
-    pipewire-jack
     pipewire-pulse
 
     # ─────────────────────────────────────────────
@@ -51,15 +53,18 @@ depends=(
     # ─────────────────────────────────────────────
     thunar
     yazi
-    aria2
     stow
-    udisks2            # Optional: `thunar`
-    gvfs-mtp           # Optional: `thunar`
-    7zip               # Optional: `yazi`
-    unzip              # Optional: `lazyvim`
-    nwg-look           # Optional: `theming`
-    adw-gtk-theme      # Optional: `theming`
-    papirus-icon-theme # Optional: `theming`
+    7zip                  # Optional: `yazi`
+    unzip                 # Optional: `lazyvim`
+    nwg-look              # Optional: `theming`
+    adw-gtk-theme         # Optional: `theming`
+    papirus-icon-theme    # Optional: `theming`
+    udisks2               # Optional: `thunar`
+    gvfs-mtp              # Optional: `thunar`
+    tumbler               # Optional: `thunar`
+    file-roller           # Optional: `thunar`
+    ntfs-3g               # Optional: `thunar`
+    thunar-archive-plugin # Optional: `thunar`
 
     # ─────────────────────────────────────────────
     # Terminal / Shell

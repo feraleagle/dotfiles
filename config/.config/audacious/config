@@ -6,6 +6,7 @@ equalizer_preamp=-3
 repeat=TRUE
 shuffle=TRUE
 use_qt=FALSE
+use_xwayland=TRUE
 
 [audgui]
 eq_preset_win=0,0,453,231
@@ -20,7 +21,10 @@ file_path=/home/eagle/Music
 [gtkui]
 column_widths=10,307,313,10,175,175,10,100,45,10,275,275,275,10,275,175,75,10,50,50
 entry_count_visible=TRUE
-player_maximized=TRUE
+player_height=1042
+player_width=1910
+player_x=5
+player_y=33
 
 [gtkui-layout]
 item0_name=File Browser
@@ -39,7 +43,16 @@ volume_right=57
 player_height=1042
 player_width=952
 
+[skins]
+equalizer_x=255
+equalizer_y=332
+player_x=255
+player_y=216
+playlist_x=530
+playlist_y=216
+skin=/usr/share/audacious/Skins/Default
+
 [speed-pitch]
 decouple=FALSE
-pitch=0.93
-speed=0.93
+pitch=0.9
+speed=0.9
