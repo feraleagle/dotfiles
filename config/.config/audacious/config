@@ -36,8 +36,8 @@ item2_pos=-1,0,0,948,514
 item_count=3
 
 [pipewire]
-volume_left=57
-volume_right=57
+volume_left=37
+volume_right=37
 
 [qtui]
 player_height=1042
